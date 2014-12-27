@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koala.mappers.FinanceProductMapper">
+    <select id="getProductById" resultType="FinanceProduct">
+        select * from finance_product
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="beginRate != null">
+                expected_profit_rate  >= #{beginRate}
+            </if>
+            <if test="endRate != null">
+                expected_profit_rate  >= #{endRate}
+            </if>
+        </where>
+    </select>
+</mapper>

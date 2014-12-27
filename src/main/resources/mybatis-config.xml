@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <typeAliases>
+        <typeAlias alias="FinanceProduct" type="com.koala.model.FinanceProduct"/>
+    </typeAliases>
+
+    <environments default="development">
+        <environment id='development'>
+            <transactionManager type='JDBC'/>
+            <dataSource type='POOLED'>
+                <property name='driver' value='com.mysql.jdbc.Driver'/>
+                <property name='url' value='jdbc:mysql://10.237.114.95:3306/koala'/>
+                <property name='username' value='koala'/>
+                <property name='password' value='koala'/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="FinanceProductMapper.xml"/>
+    </mappers>
+</configuration>
