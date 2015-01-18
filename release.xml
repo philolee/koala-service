@@ -19,7 +19,7 @@
 			</includes>
 		</fileSet>
 		<fileSet>
-			<directory>oakbay-core/target/lib</directory>
+			<directory>target/lib</directory>
 			<outputDirectory>koala/lib</outputDirectory>
 			<includes>
 				<include>*.jar</include>

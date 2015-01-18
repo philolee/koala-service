@@ -24,7 +24,7 @@ JAVA_OPTS="-server -d64"
 
 MAIN_CLASS="com.koala.service.KoalaHttpServer"
 
-CLASSPATH=$lib/*:$1/*
+CLASSPATH=$lib/*:$lib/lib/*:$1/*
 
 if [ "$2" == "-d" ]; then
     PIDFILE=/tmp/koala.pid

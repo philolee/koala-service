@@ -24,6 +24,6 @@ JAVA_OPTS="-server -d64"
 
 MAIN_CLASS="com.koala.data.DBImporter"
 
-CLASSPATH=$lib/*:$1/*
+CLASSPATH=$lib/*:$lib/lib/*:$1/*
 
 exec java $JAVA_OPTS $HEAP_OPTS $GC_OPTS $JAVA_DEBUG -classpath $CLASSPATH $MAIN_CLASS $1
