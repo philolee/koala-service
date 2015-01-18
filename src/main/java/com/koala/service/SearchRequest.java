@@ -6,12 +6,15 @@ public class SearchRequest {
   // rate
   private Float rateBegin;
   private Float rateEnd;
+  private Integer orderByRate;
 
   private Integer investCycleBegin;
   private Integer investCycleEnd;
+  private Integer orderByInvestCycle;
 
   private Integer riskScoreBegin;
   private Integer riskScoreEnd;
+  private Integer orderByRiskScore;
 
   private String investField;
 

@@ -33,6 +33,9 @@ public class FinanceProductService {
       if (request.getRiskScoreEnd() != null)
         criteria.andRiskScoreLessThanOrEqualTo(request.getRiskScoreEnd());
 
+      if (request.getInvestField() != null)
+        criteria.andInvestFieldEqualTo(request.getInvestField());
+
       LOGGER.info("Search request : {}", request);
       return productMapper.selectByExample(productExample);
     }

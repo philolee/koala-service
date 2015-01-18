@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-usage="Usage: start_koala_server <dbProperties dataFilePath>"
-if [ $# -lt 2 ]; then
+usage="Usage: start_koala_server <config dir>"
+if [ $# -lt 1 ]; then
    echo $usage
   exit 1
 fi
@@ -22,7 +22,7 @@ HEAP_OPTS="-Xmx512m -Xms256m -XX:NewSize=128m"
 #GC_OPTS="-XX:+UseConcMarkSweepGC -XX:+UseParNewGC"
 JAVA_OPTS="-server -d64"
 
-MAIN_CLASS="com.koala.data.DBImporter"
+MAIN_CLASS="com.koala.service.KoalaHttpServer"
 
 CLASSPATH=$lib/*:$lib/lib/*:$1/*
 
