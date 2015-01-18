@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d [%t] %-5p %M(%F:%L) - %m%n"/>
+        </Console>
+        <RollingFile name="common" fileName="${sys:log.path}/koala.log"
+                     filePattern="${sys:log.path}/oakbay_agent.log.%d{yyyy-MM-dd}-%i">
+            <PatternLayout>
+                <Pattern>%d [%t] %-5p %M(%F:%L) - %m%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <!--SizeBasedTriggeringPolicy size="100 MB" /-->
+            </Policies>
+            <DefaultRolloverStrategy max="7"/>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <root level="info">
+            <appender-ref ref="Console"/>
+        </root>
+    </loggers>
+</configuration>

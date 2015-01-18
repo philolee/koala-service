@@ -3,7 +3,6 @@
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-	<classPathEntry	location="src/main/resources/mysql-connector-java-5.1.6-bin.jar"/>
 	<context id="DB2Tables"	targetRuntime="MyBatis3">
 		<commentGenerator>
 			<property name="suppressDate" value="true"/>
@@ -14,17 +13,18 @@
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false"/>
 		</javaTypeResolver>
-		<javaModelGenerator targetPackage="com.koala.model" targetProject="src">
+		<javaModelGenerator targetPackage="com.koala.mybatis.generated.model" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true"/>
 			<property name="trimStrings" value="true"/>
 		</javaModelGenerator>
-		<sqlMapGenerator targetPackage="com.koala.mapping" targetProject="src">
+		<sqlMapGenerator targetPackage="resources.mapping" targetProject="src/main">
 			<property name="enableSubPackages" value="true"/>
 		</sqlMapGenerator>
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.koala.dao" targetProject="src">
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.koala.mybatis.generated.dao" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true"/>
 		</javaClientGenerator>
-		<!--table tableName="finance_product" domainObjectName="FinanceProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table-->
-		<table tableName="finance_product" domainObjectName="FinanceProduct"></table>
+		<table tableName="finance_product" domainObjectName="FinanceProduct">
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />
+		</table>
 	</context>
 </generatorConfiguration>
