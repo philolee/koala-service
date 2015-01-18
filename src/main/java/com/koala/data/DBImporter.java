@@ -2,20 +2,15 @@ package com.koala.data;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.koala.DAOUtils;
 import com.koala.mybatis.generated.dao.FinanceProductMapper;
 import com.koala.mybatis.generated.model.FinanceProduct;
-import com.koala.mybatis.generated.model.FinanceProductExample;
 import com.koala.service.MyBatisUtil;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.PrimitiveIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
